@@ -5,14 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>welco.me</title>
   <style>
-    /* --- Catpuccino Theme Colors --- */
+    /* --- Dark Catpuccino Theme --- */
     :root {
-      --bg-color: #f5e9e2;
+      --bg-color: #2b1e1c;
+      --navbar-color: #3c2a28;
       --primary-color: #c18f65;
-      --secondary-color: #ffe1c4;
-      --accent-color: #b36242;
-      --text-color: #4a3c31;
+      --secondary-color: #4e3834;
+      --accent-color: #e2c1a0;
+      --text-color: #f5e9e2;
       --button-hover: #d9a67a;
+      --input-bg: #3c2a28;
+      --input-text: #f5e9e2;
+      --shadow-color: rgba(0,0,0,0.5);
     }
 
     /* --- Global Styles --- */
@@ -29,39 +33,65 @@
       min-height: 100vh;
       display: flex;
       flex-direction: column;
+      font-size: 1.2rem;
     }
 
-    /* --- Navbar --- */
+    /* --- Browser-like Navbar --- */
     .navbar {
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      padding: 1rem 2rem;
-      background-color: var(--secondary-color);
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      justify-content: space-between;
+      padding: 0.8rem 1rem;
+      background-color: var(--navbar-color);
+      box-shadow: 0 2px 10px var(--shadow-color);
+      border-bottom: 1px solid var(--secondary-color);
     }
 
-    .navbar .logo {
-      font-weight: bold;
-      font-size: 1.5rem;
-      color: var(--accent-color);
+    .browser-controls {
+      display: flex;
+      gap: 0.5rem;
     }
 
-    .navbar .register-btn {
+    .control-btn {
+      width: 1.2rem;
+      height: 1.2rem;
+      border-radius: 50%;
+      border: none;
+      cursor: pointer;
+    }
+
+    .control-back { background-color: #f25c54; }
+    .control-forward { background-color: #f5bc41; }
+    .control-refresh { background-color: #58c57d; }
+
+    .address-bar {
+      flex: 1;
+      margin: 0 1rem;
+      padding: 0.5rem 1rem;
+      border-radius: 10px;
+      background-color: var(--input-bg);
+      color: var(--input-text);
+      font-size: 1.2rem;
+      border: none;
+      outline: none;
+      box-shadow: inset 0 0 5px var(--shadow-color);
+    }
+
+    .register-btn {
       background-color: var(--primary-color);
       color: #fff;
       border: none;
-      padding: 0.5rem 1.2rem;
+      padding: 0.6rem 1.5rem;
       border-radius: 25px;
       cursor: pointer;
-      font-size: 1rem;
+      font-size: 1.2rem;
       transition: all 0.3s ease;
     }
 
-    .navbar .register-btn:hover {
+    .register-btn:hover {
       background-color: var(--button-hover);
       transform: translateY(-2px);
-      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+      box-shadow: 0 4px 10px var(--shadow-color);
     }
 
     /* --- Main Content --- */
@@ -72,44 +102,57 @@
       justify-content: center;
       align-items: center;
       text-align: center;
-      padding: 2rem;
+      padding: 3rem 2rem;
     }
 
     .main h1 {
-      font-size: 3rem;
-      margin-bottom: 1rem;
+      font-size: 4rem;
+      margin-bottom: 1.5rem;
       color: var(--accent-color);
     }
 
     .main p {
-      font-size: 1.2rem;
-      max-width: 600px;
+      font-size: 1.5rem;
+      max-width: 800px;
+      line-height: 1.8;
       color: var(--text-color);
-      line-height: 1.6;
     }
 
     /* --- Footer --- */
     .footer {
       text-align: center;
       padding: 1rem;
-      background-color: var(--secondary-color);
-      font-size: 0.9rem;
+      background-color: var(--navbar-color);
+      font-size: 1rem;
       color: var(--text-color);
-      box-shadow: 0 -2px 8px rgba(0,0,0,0.05);
+      box-shadow: 0 -2px 8px var(--shadow-color);
+    }
+
+    /* --- Responsive --- */
+    @media (max-width: 768px) {
+      .main h1 { font-size: 3rem; }
+      .main p { font-size: 1.2rem; }
+      .address-bar { font-size: 1rem; }
+      .register-btn { font-size: 1rem; padding: 0.5rem 1.2rem; }
     }
   </style>
 </head>
 <body>
-  <!-- Navbar -->
+  <!-- Browser-like Navbar -->
   <nav class="navbar">
-    <div class="logo">welco.me</div>
+    <div class="browser-controls">
+      <button class="control-btn control-back" title="Back"></button>
+      <button class="control-btn control-forward" title="Forward"></button>
+      <button class="control-btn control-refresh" title="Refresh"></button>
+    </div>
+    <input type="text" class="address-bar" value="welco.me" readonly />
     <button class="register-btn" id="registerBtn">Register</button>
   </nav>
 
   <!-- Main Content -->
   <div class="main">
     <h1>Welcome to welco.me</h1>
-    <p>Create your mini website or portfolio here! Register your fake domain and start building your space inside our cozy Catpuccino-themed platform.</p>
+    <p>Create your mini website or portfolio here! Register your fake domain and start building your space inside our cozy Catpuccino-themed dark platform.</p>
   </div>
 
   <!-- Footer -->
