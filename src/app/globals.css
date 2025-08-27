@@ -1,0 +1,121 @@
+/* globals.css */
+
+/* Reset all default styles */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Full-page layout */
+html, body, #__next {
+  height: 100%;
+  width: 100%;
+  background-color: #1E1E1E;
+  color: #fff;
+  font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Links */
+a {
+  color: #ff85c1;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Minimalistic outline buttons */
+button {
+  background-color: #1E1E1E; /* same as body, minimalistic */
+  color: #fff;
+  border: 2px solid #fff;
+  border-radius: 8px;
+  padding: 0.6rem 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Hover effect */
+button:hover {
+  color: #1E1E1E;
+  border-color: #ff85c1;
+  background: #ff85c1;
+}
+
+/* Optional subtle animation: slide overlay effect */
+button::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+button:hover::after {
+  left: 0;
+}
+
+
+/* Inputs */
+input, textarea, select {
+  font-family: inherit;
+  color: #fff;
+  background: #2c2c2c;
+  border: none;
+  outline: none;
+  border-radius: 8px;
+  padding: 0.6rem 1rem;
+}
+
+/* Scrollbars for dark mode */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1E1E1E;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #555;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #ff85c1;
+}
+
+/* Utility classes */
+.full-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gradient-text {
+  background: linear-gradient(90deg, #ff85c1, #ff4081);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
