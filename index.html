@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>welco.me</title>
+  <style>
+    /* --- Catpuccino Theme Colors --- */
+    :root {
+      --bg-color: #f5e9e2;
+      --primary-color: #c18f65;
+      --secondary-color: #ffe1c4;
+      --accent-color: #b36242;
+      --text-color: #4a3c31;
+      --button-hover: #d9a67a;
+    }
+
+    /* --- Global Styles --- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Helvetica Neue', sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* --- Navbar --- */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      background-color: var(--secondary-color);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .navbar .logo {
+      font-weight: bold;
+      font-size: 1.5rem;
+      color: var(--accent-color);
+    }
+
+    .navbar .register-btn {
+      background-color: var(--primary-color);
+      color: #fff;
+      border: none;
+      padding: 0.5rem 1.2rem;
+      border-radius: 25px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+    }
+
+    .navbar .register-btn:hover {
+      background-color: var(--button-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    }
+
+    /* --- Main Content --- */
+    .main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 2rem;
+    }
+
+    .main h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      color: var(--accent-color);
+    }
+
+    .main p {
+      font-size: 1.2rem;
+      max-width: 600px;
+      color: var(--text-color);
+      line-height: 1.6;
+    }
+
+    /* --- Footer --- */
+    .footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: var(--secondary-color);
+      font-size: 0.9rem;
+      color: var(--text-color);
+      box-shadow: 0 -2px 8px rgba(0,0,0,0.05);
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">welco.me</div>
+    <button class="register-btn" id="registerBtn">Register</button>
+  </nav>
+
+  <!-- Main Content -->
+  <div class="main">
+    <h1>Welcome to welco.me</h1>
+    <p>Create your mini website or portfolio here! Register your fake domain and start building your space inside our cozy Catpuccino-themed platform.</p>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    &copy; 2025 welco.me — All rights reserved
+  </footer>
+
+  <!-- JS -->
+  <script>
+    const registerBtn = document.getElementById('registerBtn');
+    registerBtn.addEventListener('click', () => {
+      alert('Registration feature coming soon! ☕');
+    });
+  </script>
+</body>
+</html>
